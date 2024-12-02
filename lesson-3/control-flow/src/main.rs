@@ -25,19 +25,34 @@ fn main() {
 
 
     let mut count = 0;
-    'counting_up: loop {
-        println!("Counting up {}", count);
+    'outer_loop: loop {
         let mut remaining = 10;
+        println!("count: {}", count);
         loop {
-            println!("Remaining {}", remaining);
+            if count == 2 {
+                break 'outer_loop;
+            }
+            println!("Remaining; {}", remaining);
             if remaining == 9 {
                 break;
-            }
-            if count == 2 {
-                break 'counting_up;
             }
             remaining -= 1;
         }
         count += 1;
+    }
+
+    let mut number = 3;
+    while number >= 0 {
+        println!("{}!", number);
+        number -= 1;
+    }
+
+    let a = [10, 20, 30, 40, 50];
+    for element in a {
+        println!("The value is: {}", element);
+    }
+
+    for n in (0..4).rev() {
+        println!("{}", n);
     }
 }
