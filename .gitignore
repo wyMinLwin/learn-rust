@@ -1,18 +1,13 @@
 # Ignore the target directory
-/target/
-
+**/target/
 # Ignore Cargo.lock (if you're building a library)
-Cargo.lock
-
+**/Cargo.lock
 # Ignore build artifacts
 **/*.rs.bk
-
 # Ignore the node_modules directory (if using a JavaScript toolchain)
 node_modules/
-
 # Ignore the .env file (if using environment variables)
 .env
-
 # Ignore IDE and editor specific files
 .idea/
 .vscode/
