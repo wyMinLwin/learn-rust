@@ -1,4 +1,4 @@
-use aggregator::{Summary, Tweet, NewsArticle};
+use aggregator::{Summary, Tweet, NewsArticle, notify};
 
 fn main() {
     let tweet = Tweet {
@@ -21,4 +21,6 @@ fn main() {
 
     println!("1 new article: {}", news_article.summarize());
     println!("1 new tweet: {}", tweet.summarize());
+
+    notify(&news_article);
 }
