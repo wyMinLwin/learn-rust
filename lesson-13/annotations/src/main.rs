@@ -1,3 +1,5 @@
+use std::thread;
+
 fn main() {
 
     //closure
@@ -23,4 +25,10 @@ fn main() {
     let mut mut_borrow_list = || mut_list.push(21);
     mut_borrow_list();
     println!("After define closure: {mut_list:?}");
+
+    println!("---------------------------------");
+    let thread_list = vec![1,2,3];
+    println!("Before define closure: {:?}", thread_list);
+
+    thread::spawn(move || println!("From thread: {:?}", thread_list)).join().unwrap();
 }
